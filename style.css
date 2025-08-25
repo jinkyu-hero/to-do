@@ -1,0 +1,123 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.input-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="date"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#notes-input {
+    flex-basis: 150px; /* 비고 칸 너비 조절 */
+}
+
+#add-btn {
+    padding: 10px 20px;
+    background-color: #5b9dff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#add-btn:hover {
+    background-color: #4a8dff;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item input[type="checkbox"] {
+    margin-right: 15px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.task-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-text {
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.task-meta {
+    font-size: 14px;
+    color: #888;
+    margin-top: 4px;
+}
+
+.due-date {
+    margin-right: 10px;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff5b5b;
+    font-size: 20px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.task-item:hover .delete-btn {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 완료된 항목 스타일 */
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #aaa;
+}
